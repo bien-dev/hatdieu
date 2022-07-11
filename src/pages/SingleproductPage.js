@@ -1,99 +1,64 @@
-import React, { useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import { useProductsContext } from '../context/products_context'
-import { single_product_url as url } from '../utils/constants'
-import { formatPrice } from '../utils/helper'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import { Loading, Error } from '../components/homepage'
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { formatPrice } from '../utils/helper';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import products from '../assets/single-product.json';
 import {
 	PageHero,
 	ProductImages,
 	Star,
 	AddToCart,
-} from '../components'
+} from '../components';
 
 const SingleproductPage = () => {
-	const { id } = useParams()
-	const navigate = useNavigate()
-	const {
-		single_product_loading: loading,
-		single_product_error: error,
-		single_product: product,
-		fetchSingleProduct,
-	} = useProductsContext()
+	const { id } = useParams();
 
-	useEffect(() => {
-		fetchSingleProduct(`${url}${id}`)
-		// eslint-disable-next-line
-	}, [id])
+	const product = products.find((p) => p.id === Number(id));
 
-	useEffect(() => {
-		if (error) {
-			setTimeout(() => {
-				navigate('/')
-			}, 3000)
-		}
-		// eslint-disable-next-line
-	}, [])
-
-	if (loading) {
-		return <Loading />
-	}
-
-	if (error) {
-		return <Error />
-	}
-
-	// destructure all the key properties in each product
 	const {
 		name,
+		amount,
 		price,
 		description,
 		stock,
 		stars,
 		reviews,
-		id: sku,
-		company,
 		images,
-	} = product
+	} = product;
 
 	return (
 		<Wrapper>
 			<PageHero title={name} products />
 			<div className='section section-center page'>
 				<Link to='/products' className='btn'>
-					back to products
+					trở về gian hàng
 				</Link>
 				<div className='product-center'>
 					<ProductImages images={images} />
 					<section className='content'>
 						<h2>{name}</h2>
 						<Star stars={stars} reviews={reviews} />
-						<h5 className='price'>{formatPrice(price)}</h5>
+						<h5 className='price'>
+							{formatPrice(price)}/ {amount}
+						</h5>
 						<p className='desc'>{description}</p>
 						<p className='info'>
-							<span>Available : </span>
-							{stock > 0 ? 'In stock' : 'out of stock'}
+							<span>tình trạng : </span>
+							{stock > 0 ? 'sẵn hàng' : 'hết hàng'}
 						</p>
-						<p className='info'>
-							<span>SKU : </span>
-							{sku}
-						</p>
-						<p className='info'>
-							<span>Brand : </span>
-							{company}
-						</p>
+
 						<hr />
 						{stock > 0 && <AddToCart product={product} />}
 					</section>
 				</div>
 			</div>
 		</Wrapper>
-	)
-}
+	);
+};
 
 const Wrapper = styled.main`
+	color: var(--text-2);
 	.product-center {
 		display: grid;
 		gap: 4rem;
@@ -124,6 +89,6 @@ const Wrapper = styled.main`
 			font-size: 1.25rem;
 		}
 	}
-`
+`;
 
-export default SingleproductPage
+export default SingleproductPage;

@@ -21,7 +21,7 @@ const initialState = {
 	cart: getLocalStorage(),
 	total_items: 0,
 	total_amount: 0,
-	shipping_fee: 1542,
+	shipping_fee: 0,
 }
 
 const CartContext = React.createContext()
@@ -30,10 +30,10 @@ export const CartProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState)
 
 	// add to cart
-	const addToCart = (id, color, amount, product) => {
+	const addToCart = (id, amount, product) => {
 		dispatch({
 			type: ADD_TO_CART,
-			payload: { id, color, amount, product },
+			payload: { id, amount, product },
 		})
 	}
 	const removeItem = (id) => {

@@ -1,16 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import logo from '../assets/logo2-nobg.png'
-import styled from 'styled-components'
-import CartButtons from './CartButtons'
-import { FaTimes } from 'react-icons/fa'
-import { links } from '../utils/constants'
-import { useSidebarContext } from '../context/sidebar_context'
-import { useUserContext } from '../context/user_context'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
+import styled from 'styled-components';
+import CartButtons from './CartButtons';
+import { FaTimes } from 'react-icons/fa';
+import { links } from '../utils/constants';
+import { useSidebarContext } from '../context/sidebar_context';
 
 const Sidebar = () => {
-	const { isSidebarOpen, closeSidebar } = useSidebarContext()
-	const { myUser } = useUserContext()
+	const { isSidebarOpen, closeSidebar } = useSidebarContext();
 
 	return (
 		<SidebarContainer>
@@ -34,21 +32,20 @@ const Sidebar = () => {
 									{text}
 								</Link>
 							</li>
-						)
+						);
 					})}
-					{myUser && (
-						<li>
-							<Link to='/checkout' onClick={closeSidebar}>
-								checkout
-							</Link>
-						</li>
-					)}
+
+					<li>
+						<Link to='/checkout' onClick={closeSidebar}>
+							thanh toán
+						</Link>
+					</li>
 				</ul>
 				<CartButtons />
 			</aside>
 		</SidebarContainer>
-	)
-}
+	);
+};
 
 const SidebarContainer = styled.div`
 	text-align: center;
@@ -59,7 +56,7 @@ const SidebarContainer = styled.div`
 		padding: 1rem 1.5rem;
 	}
 	img {
-		width: 200px;
+		width: 100px;
 	}
 	.close-btn {
 		font-size: 2rem;
@@ -120,5 +117,5 @@ const SidebarContainer = styled.div`
 			display: none;
 		}
 	}
-`
-export default Sidebar
+`;
+export default Sidebar;

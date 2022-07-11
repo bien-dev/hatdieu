@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App'
 import { SidebarProvider } from './context/sidebar_context'
-import { ProductsProvider } from './context/products_context'
 import { FilterProvider } from './context/filter_context'
 import { CartProvider } from './context/cart_context'
 import { Auth0Provider } from '@auth0/auth0-react'
@@ -22,13 +21,11 @@ root.render(
 	>
 		<UserProvider>
 			<SidebarProvider>
-				<ProductsProvider>
-					<FilterProvider>
-						<CartProvider>
-							<App />
-						</CartProvider>
-					</FilterProvider>
-				</ProductsProvider>
+				<FilterProvider>
+					<CartProvider>
+						<App />
+					</CartProvider>
+				</FilterProvider>
 			</SidebarProvider>
 		</UserProvider>
 	</Auth0Provider>

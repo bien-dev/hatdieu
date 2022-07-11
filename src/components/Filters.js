@@ -1,23 +1,18 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useFilterContext } from '../context/filter_context'
-import { formatPrice } from '../utils/helper'
-import { FaCheck } from 'react-icons/fa'
-import { getTypedValues } from '../utils/helper'
+import React from 'react';
+import styled from 'styled-components';
+import { useFilterContext } from '../context/filter_context';
+import { formatPrice } from '../utils/helper';
+import { getTypedValues } from '../utils/helper';
 
 const Filters = () => {
 	const {
-		filters: { search, category, company, colors, max_price, price, freeShip },
+		filters: { search, category, maxprice, price },
 		all_products,
 		updateFilter,
 		clearFilter,
-	} = useFilterContext()
+	} = useFilterContext();
 
-	const categories = getTypedValues(all_products, 'category')
-	const companies = getTypedValues(all_products, 'company')
-	const color = getTypedValues(all_products, 'colors')
-	console.log(color)
-
+	const categories = getTypedValues(all_products, 'category');
 	return (
 		<Wrapper>
 			<div className='content'>
@@ -28,7 +23,7 @@ const Filters = () => {
 							type='text'
 							name='search'
 							value={search}
-							placeholder='search'
+							placeholder='tìm kiếm'
 							className='search-input'
 							onChange={updateFilter}
 						/>
@@ -36,7 +31,7 @@ const Filters = () => {
 					{/* end of search input */}
 					{/* category select */}
 					<div className='form-control'>
-						<h5>category</h5>
+						<h5>phân loại</h5>
 						<div>
 							{categories.map((c, index) => {
 								return (
@@ -49,98 +44,33 @@ const Filters = () => {
 									>
 										{c}
 									</button>
-								)
+								);
 							})}
 						</div>
 					</div>
 					{/* end of category select */}
-					{/* company select */}
-					<div className='form-control'>
-						<h5>company</h5>
-						<select
-							name='company'
-							value={company}
-							onChange={updateFilter}
-							className='company'
-						>
-							{companies.map((c, index) => {
-								return (
-									<option key={index} value={c}>
-										{c}
-									</option>
-								)
-							})}
-						</select>
-					</div>
-					{/* end of company select */}
-					{/* color select */}
-					<div className='form-control'>
-						<h5>colors</h5>
-						<div className='colors'>
-							{color.map((c, index) => {
-								if (c === 'all') {
-									return (
-										<button
-											key={index}
-											name='colors'
-											onClick={updateFilter}
-											data-color='all'
-											className={c === colors ? 'all-btn active' : 'all-btn'}
-										>
-											all
-										</button>
-									)
-								}
-								return (
-									<button
-										key={index}
-										name='colors'
-										style={{ background: c }}
-										onClick={updateFilter}
-										className={colors === c ? 'color-btn active' : 'color-btn'}
-										data-color={c}
-									>
-										{colors === c && <FaCheck />}
-									</button>
-								)
-							})}
-						</div>
-					</div>
-					{/* end of color select */}
 					{/* price select */}
 					<div className='form-control'>
-						<h5>price</h5>
+						<h5>khoảng giá</h5>
 						<p className='price'>{formatPrice(price)}</p>
 						<input
 							type='range'
 							name='price'
 							onChange={updateFilter}
 							min='0'
-							max={max_price}
+							max={maxprice}
 							value={price}
 						/>
 					</div>
 					{/* end of price select */}
-					{/* free ship */}
-					<div className='form-control shipping'>
-						<label htmlFor='shipping'>free shipping</label>
-						<input
-							type='checkbox'
-							name='freeShip'
-							id='shipping'
-							onClick={updateFilter}
-							checked={freeShip}
-						/>
-					</div>
-					{/* end of  free ship */}
 				</form>
 				<button className='clear-btn' onClick={clearFilter}>
-					clear filters
+					xóa bộ lọc
 				</button>
 			</div>
 		</Wrapper>
-	)
-}
+	);
+};
 const Wrapper = styled.section`
 	.form-control {
 		margin-bottom: 1.25rem;
@@ -239,6 +169,6 @@ const Wrapper = styled.section`
 			top: 1rem;
 		}
 	}
-`
+`;
 
-export default Filters
+export default Filters;

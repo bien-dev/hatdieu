@@ -1,34 +1,50 @@
-import React from "react"
-import styled from "styled-components"
-
+import React from 'react';
+import styled from 'styled-components';
+import shopee from '../assets/shopee.png';
+import facebook from '../assets/facebook.png';
 const Footer = () => {
 	return (
 		<Container>
 			<div>
 				<h5>
 					&copy;{new Date().getFullYear()}
-					<span> Your Store </span>
+					<span> Đặc sản An Nhiên </span>
 					created by <span>Bien-Dev</span>
 				</h5>
 			</div>
 			<div>
-				<h5 className='text-grey'>bienpham.dev@gmail.com</h5>
+				<a
+					href='https://shopee.vn/annhiendacsantaynguyen?categoryId=100629&itemId=14766347809%27'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<img src={shopee} alt='shopee icon' />
+				</a>
+				<a
+					href='https://www.facebook.com/AnNhienDacsanTayNguyen/'
+					target='_blank'
+					rel='noreferrer'
+				>
+					<img
+						src={facebook}
+						alt='facebook icon'
+						className='facebook-icon'
+					/>
+				</a>
 			</div>
 		</Container>
-	)
-}
+	);
+};
 
 const Container = styled.footer`
 	height: 5rem;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
-	background: var(--clr-black);
+
+	background: var(--clr-bg-1);
 	text-align: center;
-	span {
-		color: var(--clr-primary-5);
-	}
+
 	h5 {
 		color: var(--clr-white);
 		margin: 0.1rem;
@@ -40,6 +56,15 @@ const Container = styled.footer`
 		color: var(--clr-grey-8);
 		opacity: 0.75;
 	}
-`
+	img {
+		height: 50px;
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+	.facebook-icon {
+		height: 40px;
+	}
+`;
 
-export default Footer
+export default Footer;

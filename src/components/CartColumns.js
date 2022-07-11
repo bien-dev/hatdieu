@@ -5,10 +5,10 @@ const CartColumns = () => {
 	return (
 		<Wrapper>
 			<div className='content'>
-				<h5>Item</h5>
-				<h5>price</h5>
-				<h5>quantity</h5>
-				<h5>subtotal</h5>
+				<h5>mặt hàng</h5>
+				<h5>giá</h5>
+				<h5>số lượng</h5>
+				<h5>tổng</h5>
 				<span></span>
 			</div>
 			<hr />

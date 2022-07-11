@@ -18,10 +18,10 @@ const CartContent = () => {
 			<hr />
 			<div className='link-container'>
 				<Link to='/products' className='link-btn'>
-					continue shopping
+					tiếp tục mua hàng
 				</Link>
 				<button className='link-btn clear-btn' onClick={clearCart}>
-					clear this cart
+					xóa giỏ hàng
 				</button>
 			</div>
 			<CartTotals />

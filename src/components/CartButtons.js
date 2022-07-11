@@ -1,23 +1,23 @@
-import React from 'react'
+import React from 'react';
 import {
 	FaShoppingCart,
 	FaUserMinus,
 	FaUserPlus,
-} from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { useSidebarContext } from '../context/sidebar_context'
-import { useCartContext } from '../context/cart_context'
-import { useUserContext } from '../context/user_context'
+} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { useSidebarContext } from '../context/sidebar_context';
+import { useCartContext } from '../context/cart_context';
+import { useUserContext } from '../context/user_context';
 
 const CartButtons = () => {
-	const { closeSidebar } = useSidebarContext()
-	const { total_items } = useCartContext()
-	const { loginWithRedirect, myUser, logout } = useUserContext()
+	const { closeSidebar } = useSidebarContext();
+	const { total_items } = useCartContext();
+	const { loginWithRedirect, myUser, logout } = useUserContext();
 	return (
 		<Wrapper className='cart-btn-wrapper'>
 			<Link to='/cart' className='cart-btn' onClick={closeSidebar}>
-				Cart
+				Giỏ hàng
 				<span className='cart-container'>
 					<FaShoppingCart />
 					<span className='cart-value'>{total_items}</span>
@@ -29,7 +29,7 @@ const CartButtons = () => {
 					className='auth-btn'
 					onClick={() => logout({ returnTo: window.location.origin })}
 				>
-					Logout
+					thoát
 					<FaUserMinus />
 				</button>
 			) : (
@@ -38,13 +38,13 @@ const CartButtons = () => {
 					className='auth-btn'
 					onClick={loginWithRedirect}
 				>
-					Login
+					login
 					<FaUserPlus />
 				</button>
 			)}
 		</Wrapper>
-	)
-}
+	);
+};
 
 const Wrapper = styled.div`
 	display: grid;
@@ -53,9 +53,8 @@ const Wrapper = styled.div`
 	width: 225px;
 	.cart-btn {
 		color: var(--clr-grey-1);
-		font-size: 1.5rem;
+		font-size: 1rem;
 		letter-spacing: var(--spacing);
-		color: var(--clr-grey-1);
 		display: flex;
 		align-items: center;
 	}
@@ -88,7 +87,7 @@ const Wrapper = styled.div`
 		align-items: center;
 		background: transparent;
 		border-color: transparent;
-		font-size: 1.5rem;
+		font-size: 1.1rem;
 		cursor: pointer;
 		color: var(--clr-grey-1);
 		letter-spacing: var(--spacing);
@@ -96,6 +95,6 @@ const Wrapper = styled.div`
 			margin-left: 5px;
 		}
 	}
-`
+`;
 
-export default CartButtons
+export default CartButtons;

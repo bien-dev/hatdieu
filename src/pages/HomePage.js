@@ -1,20 +1,30 @@
-import React from "react"
+import React from 'react';
 import {
 	FeaturedProducts,
 	Hero,
-	Services,
+	Reviews,
 	Contact,
-} from "../components/homepage"
+	Benefits,
+	ImageGrid,
+	Reasons,
+} from '../components/homepage';
+import { ContactDetails } from '../components';
 
 const HomePage = () => {
 	return (
 		<main>
 			<Hero />
 			<FeaturedProducts />
-			<Services />
-			<Contact />
-		</main>
-	)
-}
+			<Benefits />
 
-export default HomePage
+			<Reviews />
+
+			<ImageGrid />
+			<Reasons />
+			<Contact />
+			<ContactDetails />
+		</main>
+	);
+};
+
+export default HomePage;

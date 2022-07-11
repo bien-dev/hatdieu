@@ -12,7 +12,8 @@ import CartContent from './CartContent'
 import CartColumns from './CartColumns'
 import CartTotals from './CartTotals'
 import CartItem from './CartItem'
-
+import Logo from './Logo'
+import ContactDetails from './ContactDetails'
 export {
 	Footer,
 	Navbar,
@@ -28,4 +29,6 @@ export {
 	CartColumns,
 	CartItem,
 	CartTotals,
+	Logo,
+	ContactDetails,
 }

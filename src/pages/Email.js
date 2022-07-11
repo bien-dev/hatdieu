@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 const UseEmail = (endpointUrl) => {
-	const [submitted, setSubmitted] = useState(false)
-	const [loading, setLoading] = useState(false)
-	const [error, setError] = useState()
+	const [submitted, setSubmitted] = useState(false);
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState();
 
 	const sendEmail = (data) => {
-		setLoading(true)
-		setSubmitted(false)
-		setError(undefined)
+		setLoading(true);
+		setSubmitted(false);
+		setError(undefined);
 
 		fetch(endpointUrl, {
 			method: 'POST',
@@ -19,35 +19,34 @@ const UseEmail = (endpointUrl) => {
 			body: JSON.stringify(data),
 		})
 			.then((response) => {
-				// Endpoint thinks that it's likely a spam/bot request, you need to change "spam protection mode" to "never" in HeroTofu forms
 				if (response.status === 422) {
-					throw new Error('Are you robot?')
+					throw new Error('Are you robot?');
 				}
 
 				if (response.status !== 200) {
 					throw new Error(
 						`${response.statusText} (${response.status})`
-					)
+					);
 				}
 
-				return response.json()
+				return response.json();
 			})
 			.then(() => {
-				setSubmitted(true)
-				setLoading(false)
+				setSubmitted(true);
+				setLoading(false);
 			})
 			.catch((err) => {
-				setError(err.toString())
-				setLoading(false)
-			})
-	}
+				setError(err.toString());
+				setLoading(false);
+			});
+	};
 
 	return {
 		submitted,
 		loading,
 		error,
 		sendEmail,
-	}
-}
+	};
+};
 
-export default UseEmail
+export default UseEmail;

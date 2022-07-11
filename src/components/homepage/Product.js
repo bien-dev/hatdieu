@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import { FaSearch } from "react-icons/fa"
-import styled from "styled-components"
-import { formatPrice } from "../../utils/helper"
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { FaSearch } from 'react-icons/fa'
+import styled from 'styled-components'
+import { formatPrice } from '../../utils/helper'
 
 const Product = ({ id, image, name, price }) => {
 	return (
@@ -15,7 +15,7 @@ const Product = ({ id, image, name, price }) => {
 			</div>
 			<footer>
 				<h5>{name}</h5>
-				<p>{formatPrice(price)}</p>
+				<p className='price'>{formatPrice(price)}</p>
 			</footer>
 		</Wrapper>
 	)
@@ -59,6 +59,10 @@ const Wrapper = styled.article`
 	}
 	.container:hover .link {
 		opacity: 1;
+	}
+
+	.price {
+		color: var(--text-4);
 	}
 	footer {
 		margin-top: 1rem;

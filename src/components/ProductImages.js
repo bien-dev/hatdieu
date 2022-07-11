@@ -1,7 +1,7 @@
-import React, { useState } from "react"
-import styled from "styled-components"
+import React, { useState } from 'react'
+import styled from 'styled-components'
 
-function ProductImages({ images = [{ url: "" }] }) {
+function ProductImages({ images = [{ url: '' }] }) {
 	const [mainImg, setMainImg] = useState(images[0])
 
 	return (
@@ -14,7 +14,7 @@ function ProductImages({ images = [{ url: "" }] }) {
 							src={img.url}
 							alt={img.name}
 							key={index}
-							className={img === mainImg ? "active" : null}
+							className={img === mainImg ? 'active' : null}
 							onClick={() => setMainImg(img)}
 						/>
 					)

@@ -1,0 +1,99 @@
+[
+  {
+    "id": 1,
+    "name": "Hạt điều rang muối",
+    "amount": "500g",
+    "price": 150000,
+    "category": "hạt khô",
+    "image": "http://dacsanannhien.com/wp-content/uploads/2022/06/Hat-dieu-rang-muoi-111-e1656256805657.jpg",
+    "description": "Từ những vườn điều cổ thụ được người dân canh tác hữu cơ ở huyện Krông Pa, Gia Lai, qua khâu lựa chọn khắt khe từ hàng thô cho đến chế biến đã cho ra sản phẩm Hạt điều An Nhiên chất lượng cao, tốt cho sức khỏe và vô cùng an toàn cho người sử dụng."
+  },
+  {
+    "id": 2,
+    "name": "Mật ong An Nhiên (600ml)",
+    "size": [
+      {
+        "600ml": 180000
+      },
+      {
+        "120ml": 35000
+      }
+    ],
+    "amount": "500g",
+    "price": 180000,
+    "category": "mật ong",
+    "image": "https://dacsanannhien.com/wp-content/uploads/2022/03/An-nhien-chinh-sang-4-e1648048050239.jpg",
+    "description": "Từ những vườn hoa cà phê trắng tinh khôi nở bạt ngàn trên cao nguyên hùng vĩ, cùng hàng triệu con ong chăm chỉ ngày đêm hút mật, cho ra những giọt mật tinh túy nhất của núi rừng Tây Nguyên!"
+  },
+  {
+    "id": 3,
+    "name": "Hạt điều nguyên vị",
+    "price": 150000,
+    "amount": "500g",
+    "category": "hạt khô",
+    "image": "https://dacsanannhien.com/wp-content/uploads/2022/06/hat-dieu-An-Nhien.jpg",
+    "description": "Từ những vườn điều cổ thụ được người dân canh tác hữu cơ ở huyện Krông Pa, Gia Lai, qua khâu lựa chọn khắt khe từ hàng thô cho đến chế biến đã cho ra sản phẩm Hạt điều An Nhiên chất lượng cao, tốt cho sức khỏe và vô cùng an toàn cho người sử dụng."
+  },
+  {
+    "id": 4,
+    "name": "Gạo lứt sấy rong biển (500g)",
+    "amount": "500g",
+    "price": 75000,
+    "category": "gạo lứt",
+    "image": "https://dacsanannhien.com/wp-content/uploads/2022/06/gao-lut-anh-vuong-e1656257155964.jpg",
+    "description": "Gạo lứt sấy rong biển An Nhiên, giòn tan tròn vị, đậm chất núi rừng Tây Nguyên!️ Không chất bảo quản. Ít calo, tốt cho sức khỏe"
+  },
+  {
+    "id": 5,
+    "name": "Bánh hạt dinh dưỡng",
+    "amount": "500g",
+    "price": 125000,
+    "category": "bánh hạt",
+    "image": "https://dacsanannhien.com/wp-content/uploads/2022/05/z3406533236593_d5d8308279216ae8139409f5d0da5002.jpg",
+    "description": "Vị thơm béo ngậy của hạt điều, hạnh nhân, hạt bí, hạt mè hoà quyện với vị chua chua ngọt ngọt của nho khô và sự giòn rụm của bánh đồng tiền, hương thơm dịu nhẹ của gừng và mềm dẻo của mạch nha tạo nên những miếng bánh hạt An Nhiên vô cùng chất lượng và giàu dinh dưỡng !!!"
+  },
+  {
+    "id": 6,
+    "name": "Bò khô sợi An Nhiên",
+    "amount": "250g",
+    "price": 230000,
+    "category": "bò khô",
+    "image": "https://dacsanannhien.com/wp-content/uploads/2022/03/BO-KHO-SOI-3-e1648048359287.jpg",
+    "description": "Từ những đàn bò đi bộ ăn cỏ ở huyện Krông Pa, Gia Lai, qua khâu chọn lọc và chế biến thủ công vô cùng công phu, cho ra những sợi bò khô An Nhiên thơm ngon bổ dưỡng, đậm chất núi rừng Tây Nguyên!"
+  },
+  {
+    "id": 7,
+    "name": "Hạt macca An Nhiên",
+    "amount": "250g",
+    "price": 140000,
+    "category": "hạt khô",
+    "image": "https://dacsanannhien.com/wp-content/uploads/2022/03/macca-2-e1648048179314.jpg",
+    "description": "Macca An Nhiên được chính người dân Tây Nguyên trồng trên cao nguyên hùng vĩ, được bảo quản trong phòng lạnh với công nghệ tiên tiến, sấy nứt tự nhiên, rất dễ tách vỏ, đảm bảo luôn TƯƠI MỚI, THƠM GIÒN, BÉO NGẬY, đặc biệt KHÔNG HÔI DẦU, KHÔNG CHẤT BẢO QUẢN, HOÀN TOÀN TỐT CHO SỨC KHỎE."
+  },
+  {
+    "id": 8,
+    "name": "Gạo lứt sấy rong biển 1kg",
+    "amount": "1000g",
+    "price": 150000,
+    "category": "gạo lứt",
+    "image": "https://dacsanannhien.com/wp-content/uploads/2022/04/Gao-lut-logo-6-e1651718381372.jpg",
+    "description": "Gạo lứt sấy rong biển An Nhiên, giòn tan tròn vị, đậm chất núi rừng Tây Nguyên!️ Không chất bảo quản. Ít calo, tốt cho sức khỏe"
+  },
+  {
+  "id": 9,
+    "name": "Mật ong An Nhiên (120ml)",
+    "size": [
+      {
+        "600ml": 180000
+      },
+      {
+        "120ml": 35000
+      }
+    ],
+    "amount": "120ml",
+    "price": 35000,
+    "category": "mật ong",
+    "image": "https://dacsanannhien.com/wp-content/uploads/2022/03/An-nhien-chinh-do-sang-e1648047864107.jpg",
+    "description": "Từ những vườn hoa cà phê trắng tinh khôi nở bạt ngàn trên cao nguyên hùng vĩ, cùng hàng triệu con ong chăm chỉ ngày đêm hút mật, cho ra những giọt mật tinh túy nhất của núi rừng Tây Nguyên!"
+  }
+]
